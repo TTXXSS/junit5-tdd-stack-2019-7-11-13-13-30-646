@@ -75,4 +75,30 @@ public class ParkingBoyTest {
         Assertions.assertSame(fetchedCar2,null);
 
     }
+
+    @Test
+    public void should_return_no_cars_when_fetch_car_given_ticket_that_has_been_used_by_parking_the_car(){
+        //Given
+        Car car1 = new Car();
+       // Car car2 = new Car();
+        Map<Ticket,Car> map = new HashMap<>();
+        ParkingLot parkingLot = new ParkingLot();
+        parkingLot.setMap(map);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        //Ticket ticket = new Ticket();
+        Ticket fetchTicket1 = parkingBoy.park(car1); //return the right ticket
+
+
+
+        //when
+        Car fetchedCar1 = parkingBoy.fetchCar(fetchTicket1);
+        Car fetchedCar2 = parkingBoy.fetchCar(fetchTicket1); //get the car again when the ticket has been used
+        //System.out.println(fetchedCar);
+
+        //then
+
+        Assertions.assertSame(fetchedCar1,car1);
+        Assertions.assertSame(fetchedCar2,null);
+
+    }
 }

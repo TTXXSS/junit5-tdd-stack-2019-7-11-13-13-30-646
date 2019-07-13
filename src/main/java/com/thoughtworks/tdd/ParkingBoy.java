@@ -24,7 +24,7 @@ public class ParkingBoy {
         else
             car = map.get(fetchTicket);
         if (car != null)
-            return map.get(fetchTicket);
+            return map.remove(fetchTicket);
         else
             return null;
     }
