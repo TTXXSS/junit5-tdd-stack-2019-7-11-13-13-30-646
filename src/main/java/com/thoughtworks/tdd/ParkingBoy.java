@@ -42,15 +42,14 @@ public class ParkingBoy {
         for (int i = 0; i < length; i++) {
             map = this.parkingLot.get(i);
             car = map.get(fetchTicket);
-            if(car!=null)
-                break;
+            if(car!=null) {
+                return map.remove(fetchTicket);
+            }
 
         }
         // System.out.println(this.parkingLot.get(0).size());
-        if (car == null)
             return null;
-        else
-            return car;
+
     }
 
 
