@@ -101,4 +101,58 @@ public class ParkingBoyTest {
         Assertions.assertSame(fetchedCar2,null);
 
     }
+
+    @Test
+    public void should_no_park_the_car_when_the_capacity_of_parkingLot_is_full_by_parking_the_car(){
+        //Given
+        Car car1 = new Car();
+        Car car2 = new Car();
+        Car car3 = new Car();
+        Car car4 = new Car();
+        Car car5 = new Car();
+        Car car6 = new Car();
+        Car car7 = new Car();
+        Car car8 = new Car();
+        Car car9 = new Car();
+        Car car10 = new Car();
+        Car car11 = new Car();
+
+
+        // Car car2 = new Car();
+        Map<Ticket,Car> map = new HashMap<>();
+        ParkingLot parkingLot = new ParkingLot();
+        parkingLot.setMap(map);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        //Ticket ticket = new Ticket();
+        Ticket fetchTicket1 = parkingBoy.park(car1); //return the right ticket
+        Ticket fetchTicket2 = parkingBoy.park(car2);
+        Ticket fetchTicket3 = parkingBoy.park(car3);
+        Ticket fetchTicket4 = parkingBoy.park(car4);
+        Ticket fetchTicket5 = parkingBoy.park(car5);
+        Ticket fetchTicket6 = parkingBoy.park(car6);
+        Ticket fetchTicket7 = parkingBoy.park(car7);
+        Ticket fetchTicket8 = parkingBoy.park(car8);
+        Ticket fetchTicket9= parkingBoy.park(car9);
+        Ticket fetchTicket10 = parkingBoy.park(car10);
+        Ticket fetchTicket11 = parkingBoy.park(car11);
+
+
+
+
+        //when
+        Car fetchedCar11 = parkingBoy.fetchCar(fetchTicket11);
+
+
+
+
+
+
+        //System.out.println(fetchedCar);
+
+        //then
+
+
+        Assertions.assertSame(fetchedCar11,null);
+
+    }
 }

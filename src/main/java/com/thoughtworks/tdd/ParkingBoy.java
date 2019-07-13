@@ -12,6 +12,9 @@ public class ParkingBoy {
 
     public Ticket park(Car car) {
         Ticket ticket = new Ticket();
+        //System.out.println(this.parkingLot.getMap().size());
+        if(this.parkingLot.getMap().size()>=10)
+            return null;
         parkingLot.getMap().put(ticket, car);
         return ticket;
     }
