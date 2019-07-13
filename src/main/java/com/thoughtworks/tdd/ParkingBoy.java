@@ -12,13 +12,21 @@ public class ParkingBoy {
 
     public Ticket park(Car car) {
         Ticket ticket = new Ticket();
-        parkingLot.getMap().put(ticket,car);
+        parkingLot.getMap().put(ticket, car);
         return ticket;
     }
 
     public Car fetchCar(Ticket fetchTicket) {
-        Map<Ticket,Car> map =this.parkingLot.getMap();
-        return map.get(fetchTicket);
+        Map<Ticket, Car> map = this.parkingLot.getMap();
+        Car car;
+        if (fetchTicket == null)
+            return null;
+        else
+            car = map.get(fetchTicket);
+        if (car != null)
+            return map.get(fetchTicket);
+        else
+            return null;
     }
 
 
