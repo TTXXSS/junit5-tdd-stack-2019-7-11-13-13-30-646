@@ -11,8 +11,7 @@ import java.util.Map;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
-public class ParkingBoyTest {
+public class SuperSmartParkingBoyTest {
     @Test
     public void should_return_car_when_fetch_car_given_have_ticket__by_parking_the_car(){
         //Given
@@ -22,11 +21,11 @@ public class ParkingBoyTest {
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        ParkingBoy parkingBoy = new ParkingBoy(list);
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);
         Ticket ticket = new Ticket();
-        Ticket fetchTicket = parkingBoy.park(car);
+        Ticket fetchTicket = superSmartParkingBoy.park(car);
         //when
-        Car fetchedCar = parkingBoy.fetchCar(fetchTicket);
+        Car fetchedCar = superSmartParkingBoy.fetchCar(fetchTicket);
         //System.out.println(fetchedCar);
 
         //then
@@ -43,14 +42,14 @@ public class ParkingBoyTest {
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        ParkingBoy parkingBoy = new ParkingBoy(list);
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);
         //Ticket ticket = new Ticket();
-        Ticket fetchTicket1 = parkingBoy.park(car1);
-        Ticket fetchTicket2 = parkingBoy.park(car2);
+        Ticket fetchTicket1 = superSmartParkingBoy.park(car1);
+        Ticket fetchTicket2 = superSmartParkingBoy.park(car2);
 
         //when
-        Car fetchedCar1 = parkingBoy.fetchCar(fetchTicket1);
-        Car fetchedCar2 = parkingBoy.fetchCar(fetchTicket2);
+        Car fetchedCar1 = superSmartParkingBoy.fetchCar(fetchTicket1);
+        Car fetchedCar2 = superSmartParkingBoy.fetchCar(fetchTicket2);
         //System.out.println(fetchedCar);
 
         //then
@@ -70,15 +69,14 @@ public class ParkingBoyTest {
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        ParkingBoy parkingBoy = new ParkingBoy(list);
-        //Ticket ticket = new Ticket();
-        Ticket fetchTicket1 = parkingBoy.park(car1); //return the right ticket
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);        //Ticket ticket = new Ticket();
+        Ticket fetchTicket1 = superSmartParkingBoy.park(car1); //return the right ticket
         Ticket ticket = new Ticket();   //give a wrong ticket
 
 
         //when
-        Car fetchedCar1 = parkingBoy.fetchCar(ticket);
-        Car fetchedCar2 = parkingBoy.fetchCar(null);
+        Car fetchedCar1 = superSmartParkingBoy.fetchCar(ticket);
+        Car fetchedCar2 = superSmartParkingBoy.fetchCar(null);
         //System.out.println(fetchedCar);
 
         //then
@@ -92,21 +90,21 @@ public class ParkingBoyTest {
     public void should_return_no_cars_when_fetch_car_given_ticket_that_has_been_used_by_parking_the_car(){
         //Given
         Car car1 = new Car();
-       // Car car2 = new Car();
+        // Car car2 = new Car();
         Map<Ticket,Car> map = new HashMap<>();
         ParkingLot parkingLot = new ParkingLot();
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        ParkingBoy parkingBoy = new ParkingBoy(list);
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);        //Ticket ticket = new Ticket();
         //Ticket ticket = new Ticket();
-        Ticket fetchTicket1 = parkingBoy.park(car1); //return the right ticket
+        Ticket fetchTicket1 = superSmartParkingBoy.park(car1); //return the right ticket
 
 
 
         //when
-        Car fetchedCar1 = parkingBoy.fetchCar(fetchTicket1);
-        Car fetchedCar2 = parkingBoy.fetchCar(fetchTicket1); //get the car again when the ticket has been used
+        Car fetchedCar1 = superSmartParkingBoy.fetchCar(fetchTicket1);
+        Car fetchedCar2 = superSmartParkingBoy.fetchCar(fetchTicket1); //get the car again when the ticket has been used
         //System.out.println(fetchedCar);
 
         //then
@@ -138,24 +136,24 @@ public class ParkingBoyTest {
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        ParkingBoy parkingBoy = new ParkingBoy(list);
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);        //Ticket ticket = new Ticket();
         //Ticket ticket = new Ticket();
-        Ticket fetchTicket1 = parkingBoy.park(car1); //return the right ticket
-        Ticket fetchTicket2 = parkingBoy.park(car2);
-        Ticket fetchTicket3 = parkingBoy.park(car3);
-        Ticket fetchTicket4 = parkingBoy.park(car4);
-        Ticket fetchTicket5 = parkingBoy.park(car5);
-        Ticket fetchTicket6 = parkingBoy.park(car6);
-        Ticket fetchTicket7 = parkingBoy.park(car7);
-        Ticket fetchTicket8 = parkingBoy.park(car8);
-        Ticket fetchTicket9= parkingBoy.park(car9);
-        Ticket fetchTicket10 = parkingBoy.park(car10);
-        Ticket fetchTicket11 = parkingBoy.park(car11);
+        Ticket fetchTicket1 = superSmartParkingBoy.park(car1); //return the right ticket
+        Ticket fetchTicket2 = superSmartParkingBoy.park(car2);
+        Ticket fetchTicket3 = superSmartParkingBoy.park(car3);
+        Ticket fetchTicket4 = superSmartParkingBoy.park(car4);
+        Ticket fetchTicket5 = superSmartParkingBoy.park(car5);
+        Ticket fetchTicket6 = superSmartParkingBoy.park(car6);
+        Ticket fetchTicket7 = superSmartParkingBoy.park(car7);
+        Ticket fetchTicket8 = superSmartParkingBoy.park(car8);
+        Ticket fetchTicket9= superSmartParkingBoy.park(car9);
+        Ticket fetchTicket10 = superSmartParkingBoy.park(car10);
+        Ticket fetchTicket11 = superSmartParkingBoy.park(car11);
 
 
 
         //when
-        Car fetchedCar11 = parkingBoy.fetchCar(fetchTicket11);
+        Car fetchedCar11 = superSmartParkingBoy.fetchCar(fetchTicket11);
 
 
 
@@ -180,15 +178,15 @@ public class ParkingBoyTest {
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        ParkingBoy parkingBoy = new ParkingBoy(list);
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);        //Ticket ticket = new Ticket();
         Ticket ticket = new Ticket();
         Ticket ticket1 = new Ticket();
-        Ticket fetchTicket = parkingBoy.park(car);
+        Ticket fetchTicket = superSmartParkingBoy.park(car);
 
         //when
-        String tipMessage = parkingBoy.giveTipMessageByFetchCar(ticket); //when giving the wrong ticket
-        Car fetchedCar = parkingBoy.fetchCar(fetchTicket); //the ticket has been used
-        String tipMessage1 = parkingBoy.giveTipMessageByFetchCar(fetchTicket);
+        String tipMessage = superSmartParkingBoy.giveTipMessageByFetchCar(ticket); //when giving the wrong ticket
+        Car fetchedCar = superSmartParkingBoy.fetchCar(fetchTicket); //the ticket has been used
+        String tipMessage1 = superSmartParkingBoy.giveTipMessageByFetchCar(fetchTicket);
 
         //then
 
@@ -204,12 +202,12 @@ public class ParkingBoyTest {
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        ParkingBoy parkingBoy = new ParkingBoy(list);
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);
         Ticket ticket = new Ticket();
-        Ticket fetchTicket = parkingBoy.park(car);
+        Ticket fetchTicket = superSmartParkingBoy.park(car);
 
         //when
-        String tipMessage = parkingBoy.giveTipMessageByFetchCar(null); //when giving the wrong ticket
+        String tipMessage = superSmartParkingBoy.giveTipMessageByFetchCar(null); //when giving the wrong ticket
 
 
         //then
@@ -237,34 +235,33 @@ public class ParkingBoyTest {
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        ParkingBoy parkingBoy = new ParkingBoy(list);
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);
 
-        Ticket fetchTicket1 = parkingBoy.park(car1);
-        Ticket fetchTicket2 = parkingBoy.park(car2);
-        Ticket fetchTicket3 = parkingBoy.park(car3);
-        Ticket fetchTicket4 = parkingBoy.park(car4);
-        Ticket fetchTicket5 = parkingBoy.park(car5);
-        Ticket fetchTicket6 = parkingBoy.park(car6);
-        Ticket fetchTicket7 = parkingBoy.park(car7);
-        Ticket fetchTicket8 = parkingBoy.park(car8);
-        Ticket fetchTicket9 = parkingBoy.park(car9);
-        Ticket fetchTicket10 = parkingBoy.park(car10);
-        Ticket fetchTicket11 = parkingBoy.park(car11);
+        Ticket fetchTicket1 = superSmartParkingBoy.park(car1);
+        Ticket fetchTicket2 = superSmartParkingBoy.park(car2);
+        Ticket fetchTicket3 = superSmartParkingBoy.park(car3);
+        Ticket fetchTicket4 = superSmartParkingBoy.park(car4);
+        Ticket fetchTicket5 = superSmartParkingBoy.park(car5);
+        Ticket fetchTicket6 = superSmartParkingBoy.park(car6);
+        Ticket fetchTicket7 = superSmartParkingBoy.park(car7);
+        Ticket fetchTicket8 = superSmartParkingBoy.park(car8);
+        Ticket fetchTicket9 = superSmartParkingBoy.park(car9);
+        Ticket fetchTicket10 = superSmartParkingBoy.park(car10);
+        Ticket fetchTicket11 = superSmartParkingBoy.park(car11);
 
 
 
 
         //when
-        String tipMessage11 = parkingBoy.giveTipMessageByFetchCar(fetchTicket11); //when capacity of parkingLot is full
+        String tipMessage11 = superSmartParkingBoy.giveTipMessageByFetchCar(fetchTicket11); //when capacity of parkingLot is full
 
 //System.out.println(parkingBoy.getParkingLot().get(0).size());
         //then
 
         assertThat(tipMessage11, is("Not enough position."));
     }
-
     @Test
-    public void should_move_to_next_parkingLot__when_first_parkingLot_is_full() {
+    public void should_park_the_car_to_min_rate_of_parkingLot() {
         //Given
         Car car1 = new Car();
         Car car2 = new Car();
@@ -286,28 +283,28 @@ public class ParkingBoyTest {
         List<Map<Ticket, Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
         list.add(parkingLot1.getMap());
-        ParkingBoy parkingBoy = new ParkingBoy(list);
-        Ticket fetchTicket1 = parkingBoy.park(car1);
-        Ticket fetchTicket2 = parkingBoy.park(car2);
-        Ticket fetchTicket3 = parkingBoy.park(car3);
-        Ticket fetchTicket4 = parkingBoy.park(car4);
-        Ticket fetchTicket5 = parkingBoy.park(car5);
-        Ticket fetchTicket6 = parkingBoy.park(car6);
-        Ticket fetchTicket7 = parkingBoy.park(car7);
-        Ticket fetchTicket8 = parkingBoy.park(car8);
-        Ticket fetchTicket9 = parkingBoy.park(car9);
-        Ticket fetchTicket10 = parkingBoy.park(car10);
-        Ticket fetchTicket11 = parkingBoy.park(car11);  //parking the car to next parkingLot
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);
+        Ticket fetchTicket1 = superSmartParkingBoy.park(car1);
+        Ticket fetchTicket2 = superSmartParkingBoy.park(car2);
+        Ticket fetchTicket3 = superSmartParkingBoy.park(car3);
+        Ticket fetchTicket4 = superSmartParkingBoy.park(car4);
+        Ticket fetchTicket5 = superSmartParkingBoy.park(car5);
+        Ticket fetchTicket6 = superSmartParkingBoy.park(car6);
+        Ticket fetchTicket7 = superSmartParkingBoy.park(car7);
+        Ticket fetchTicket8 = superSmartParkingBoy.park(car8);
+        Ticket fetchTicket9 = superSmartParkingBoy.park(car9);
+        Ticket fetchTicket10 = superSmartParkingBoy.park(car10);
+        Ticket fetchTicket11 = superSmartParkingBoy.park(car11);  //parking the car to the min size of parkingLot
+        System.out.println(list.get(0).size());
+        System.out.println(list.get(1).size());
+        System.out.println(fetchTicket11);
 
         //when
         //String tipMessage = parkingBoy.giveTipMessageByFetchCar(null); //when giving the wrong ticket
 
-        Car fetchedCar11 = parkingBoy.fetchCar(fetchTicket11);
+        Car fetchedCar11 = superSmartParkingBoy.fetchCar(fetchTicket11);
         //then
 
         Assertions.assertSame(fetchedCar11, car11);
     }
-
-
-
 }
