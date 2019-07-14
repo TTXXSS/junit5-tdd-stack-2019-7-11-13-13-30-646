@@ -187,8 +187,8 @@ public class ParkingBoyTest {
 
         //when
         String tipMessage = parkingBoy.giveTipMessageByFetchCar(ticket); //when giving the wrong ticket
-        Car fetchedCar = parkingBoy.fetchCar(fetchTicket); //the ticket has been used
-        String tipMessage1 = parkingBoy.giveTipMessageByFetchCar(fetchTicket);
+       // Car fetchedCar = parkingBoy.fetchCar(fetchTicket); //the ticket has been used
+        //String tipMessage1 = parkingBoy.giveTipMessageByFetchCar(fetchTicket);
 
         //then
 
