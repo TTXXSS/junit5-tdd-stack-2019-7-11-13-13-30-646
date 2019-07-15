@@ -8,7 +8,8 @@ public class SuperSmartParkingBoy extends ParkingBoy {
     public SuperSmartParkingBoy(List<Map<Ticket, Car>> parkingLot) {
         super(parkingLot);
     }
-
+private final int PARKINGLOT_SPACE = 10;
+    private  final double ONE_CONST =1.0;
     @Override
     public Ticket park(Car car) {
         Ticket ticket = new Ticket();
@@ -29,7 +30,7 @@ public class SuperSmartParkingBoy extends ParkingBoy {
         int length = this.parkingLot.size();
         double[] rate = new double[length];
         for (int i = 0; i < length; i++) {
-            rate[i] = this.parkingLot.get(i).size() * 1.0 / 10;
+            rate[i] = this.parkingLot.get(i).size() * ONE_CONST / PARKINGLOT_SPACE;
         }
         return rate;
     }
