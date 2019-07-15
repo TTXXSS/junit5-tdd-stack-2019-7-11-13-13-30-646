@@ -82,7 +82,6 @@ public class ParkingLotServiceManagerTest {
         Ticket fetchTicket = parkingLotServiceManager.park(car);
         //when
         Car fetchedCar = parkingLotServiceManager.fetchCar(fetchTicket);
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -118,8 +117,6 @@ public class ParkingLotServiceManagerTest {
 
         //when
         String tipMessage = getParkingBoyByIndex.giveTipMessageByFetchCar(ticket); //when giving the wrong ticket
-       // Car fetchedCar = parkingBoy.fetchCar(fetchTicket); //the ticket has been used
-        //String tipMessage1 = parkingBoy.giveTipMessageByFetchCar(fetchTicket);
 
         //then
 
@@ -156,8 +153,6 @@ public class ParkingLotServiceManagerTest {
 
         //when
         String tipMessage = getParkingBoyByIndex.giveTipMessageByFetchCar(null); //when giving the wrong ticket
-        // Car fetchedCar = parkingBoy.fetchCar(fetchTicket); //the ticket has been used
-        //String tipMessage1 = parkingBoy.giveTipMessageByFetchCar(fetchTicket);
 
         //then
 
@@ -211,8 +206,6 @@ public class ParkingLotServiceManagerTest {
 
         //when
         String tipMessage11 = parkingBoy.giveTipMessageByFetchCar(fetchTicket11); //when capacity of parkingLot is full
-        // Car fetchedCar = parkingBoy.fetchCar(fetchTicket); //the ticket has been used
-        //String tipMessage1 = parkingBoy.giveTipMessageByFetchCar(fetchTicket);
 
         //then
 
