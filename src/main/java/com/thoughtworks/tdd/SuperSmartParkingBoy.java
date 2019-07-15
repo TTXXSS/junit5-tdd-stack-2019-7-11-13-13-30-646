@@ -13,20 +13,11 @@ public class SuperSmartParkingBoy extends ParkingBoy {
     public Ticket park(Car car) {
         Ticket ticket = new Ticket();
         int length = this.parkingLot.size();
-        double[] rate = new double[length];
-        for (int i = 0; i < length; i++) {
-            rate[i] = this.parkingLot.get(i).size() * 1.0 / 10;
-        }
+        double[] rateOfEmptyPosition = getRateOfEmptyPosition();
         //Arrays.sort(rate);
-        double temp = rate[0];
-        int index = 0;
-        for (int i = 0; i < length; i++) {
-            if (rate[i] < temp) {
-                temp = rate[i];
-                index = i;
-            }
-        }
-        if(this.parkingLot.get(index).size()==10)
+        double temp = rateOfEmptyPosition[0];
+        int index = getIndexOfMinRateOfEmptyPosition(rateOfEmptyPosition,temp);
+        if (this.parkingLot.get(index).size() == 10)
             return null;
         else {
             this.parkingLot.get(index).put(ticket, car);
@@ -34,4 +25,24 @@ public class SuperSmartParkingBoy extends ParkingBoy {
         }
     }
 
+    public double[] getRateOfEmptyPosition() {
+        int length = this.parkingLot.size();
+        double[] rate = new double[length];
+        for (int i = 0; i < length; i++) {
+            rate[i] = this.parkingLot.get(i).size() * 1.0 / 10;
+        }
+        return rate;
+    }
+
+    public int getIndexOfMinRateOfEmptyPosition(double[] rateOfEmptyPosition,double temp){
+        int index=0;
+        int length = this.parkingLot.size();
+        for (int i = 0; i < length; i++) {
+            if (rateOfEmptyPosition[i] < temp) {
+                temp = rateOfEmptyPosition[i];
+                index = i;
+            }
+        }
+        return index;
+    }
 }
