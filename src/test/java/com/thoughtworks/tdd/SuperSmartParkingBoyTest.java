@@ -26,7 +26,6 @@ public class SuperSmartParkingBoyTest {
         Ticket fetchTicket = superSmartParkingBoy.park(car);
         //when
         Car fetchedCar = superSmartParkingBoy.fetchCar(fetchTicket);
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -43,14 +42,12 @@ public class SuperSmartParkingBoyTest {
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
         SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);
-        //Ticket ticket = new Ticket();
         Ticket fetchTicket1 = superSmartParkingBoy.park(car1);
         Ticket fetchTicket2 = superSmartParkingBoy.park(car2);
 
         //when
         Car fetchedCar1 = superSmartParkingBoy.fetchCar(fetchTicket1);
         Car fetchedCar2 = superSmartParkingBoy.fetchCar(fetchTicket2);
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -69,7 +66,7 @@ public class SuperSmartParkingBoyTest {
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);        //Ticket ticket = new Ticket();
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);
         Ticket fetchTicket1 = superSmartParkingBoy.park(car1); //return the right ticket
         Ticket ticket = new Ticket();   //give a wrong ticket
 
@@ -77,7 +74,6 @@ public class SuperSmartParkingBoyTest {
         //when
         Car fetchedCar1 = superSmartParkingBoy.fetchCar(ticket);
         Car fetchedCar2 = superSmartParkingBoy.fetchCar(null);
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -96,8 +92,7 @@ public class SuperSmartParkingBoyTest {
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);        //Ticket ticket = new Ticket();
-        //Ticket ticket = new Ticket();
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);
         Ticket fetchTicket1 = superSmartParkingBoy.park(car1); //return the right ticket
 
 
@@ -105,7 +100,6 @@ public class SuperSmartParkingBoyTest {
         //when
         Car fetchedCar1 = superSmartParkingBoy.fetchCar(fetchTicket1);
         Car fetchedCar2 = superSmartParkingBoy.fetchCar(fetchTicket1); //get the car again when the ticket has been used
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -130,14 +124,12 @@ public class SuperSmartParkingBoyTest {
         Car car11 = new Car();
 
 
-        // Car car2 = new Car();
         Map<Ticket,Car> map = new HashMap<>();
         ParkingLot parkingLot = new ParkingLot();
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);        //Ticket ticket = new Ticket();
-        //Ticket ticket = new Ticket();
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);
         Ticket fetchTicket1 = superSmartParkingBoy.park(car1); //return the right ticket
         Ticket fetchTicket2 = superSmartParkingBoy.park(car2);
         Ticket fetchTicket3 = superSmartParkingBoy.park(car3);
@@ -149,18 +141,8 @@ public class SuperSmartParkingBoyTest {
         Ticket fetchTicket9= superSmartParkingBoy.park(car9);
         Ticket fetchTicket10 = superSmartParkingBoy.park(car10);
         Ticket fetchTicket11 = superSmartParkingBoy.park(car11);
-
-
-
         //when
         Car fetchedCar11 = superSmartParkingBoy.fetchCar(fetchTicket11);
-
-
-
-
-
-
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -178,7 +160,7 @@ public class SuperSmartParkingBoyTest {
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
-        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);        //Ticket ticket = new Ticket();
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(list);
         Ticket ticket = new Ticket();
         Ticket ticket1 = new Ticket();
         Ticket fetchTicket = superSmartParkingBoy.park(car);
@@ -191,7 +173,6 @@ public class SuperSmartParkingBoyTest {
         //then
 
         assertThat(tipMessage, is("Unrecognized parking ticket."));
-        //assertThat(tipMessage1, is("Unrecognized parking ticket."));
     }
     @Test
     public void should_return_tipMessage__when_customer_can_not_fetch_car_by_given_no_ticket(){
@@ -255,7 +236,6 @@ public class SuperSmartParkingBoyTest {
         //when
         String tipMessage11 = superSmartParkingBoy.giveTipMessageByFetchCar(fetchTicket11); //when capacity of parkingLot is full
 
-//System.out.println(parkingBoy.getParkingLot().get(0).size());
         //then
 
         assertThat(tipMessage11, is("Not enough position."));
@@ -300,7 +280,6 @@ public class SuperSmartParkingBoyTest {
         System.out.println(fetchTicket11);
 
         //when
-        //String tipMessage = parkingBoy.giveTipMessageByFetchCar(null); //when giving the wrong ticket
 
         Car fetchedCar11 = superSmartParkingBoy.fetchCar(fetchTicket11);
         //then
