@@ -27,7 +27,6 @@ public class ParkingBoyTest {
         Ticket fetchTicket = parkingBoy.park(car);
         //when
         Car fetchedCar = parkingBoy.fetchCar(fetchTicket);
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -44,14 +43,12 @@ public class ParkingBoyTest {
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
         ParkingBoy parkingBoy = new ParkingBoy(list);
-        //Ticket ticket = new Ticket();
         Ticket fetchTicket1 = parkingBoy.park(car1);
         Ticket fetchTicket2 = parkingBoy.park(car2);
 
         //when
         Car fetchedCar1 = parkingBoy.fetchCar(fetchTicket1);
         Car fetchedCar2 = parkingBoy.fetchCar(fetchTicket2);
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -71,7 +68,6 @@ public class ParkingBoyTest {
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
         ParkingBoy parkingBoy = new ParkingBoy(list);
-        //Ticket ticket = new Ticket();
         Ticket fetchTicket1 = parkingBoy.park(car1); //return the right ticket
         Ticket ticket = new Ticket();   //give a wrong ticket
 
@@ -79,7 +75,6 @@ public class ParkingBoyTest {
         //when
         Car fetchedCar1 = parkingBoy.fetchCar(ticket);
         Car fetchedCar2 = parkingBoy.fetchCar(null);
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -99,7 +94,6 @@ public class ParkingBoyTest {
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
         ParkingBoy parkingBoy = new ParkingBoy(list);
-        //Ticket ticket = new Ticket();
         Ticket fetchTicket1 = parkingBoy.park(car1); //return the right ticket
 
 
@@ -107,7 +101,6 @@ public class ParkingBoyTest {
         //when
         Car fetchedCar1 = parkingBoy.fetchCar(fetchTicket1);
         Car fetchedCar2 = parkingBoy.fetchCar(fetchTicket1); //get the car again when the ticket has been used
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -131,15 +124,12 @@ public class ParkingBoyTest {
         Car car10 = new Car();
         Car car11 = new Car();
 
-
-        // Car car2 = new Car();
         Map<Ticket,Car> map = new HashMap<>();
         ParkingLot parkingLot = new ParkingLot();
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
         ParkingBoy parkingBoy = new ParkingBoy(list);
-        //Ticket ticket = new Ticket();
         Ticket fetchTicket1 = parkingBoy.park(car1); //return the right ticket
         Ticket fetchTicket2 = parkingBoy.park(car2);
         Ticket fetchTicket3 = parkingBoy.park(car3);
@@ -156,13 +146,6 @@ public class ParkingBoyTest {
 
         //when
         Car fetchedCar11 = parkingBoy.fetchCar(fetchTicket11);
-
-
-
-
-
-
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -187,8 +170,6 @@ public class ParkingBoyTest {
 
         //when
         String tipMessage = parkingBoy.giveTipMessageByFetchCar(ticket); //when giving the wrong ticket
-       // Car fetchedCar = parkingBoy.fetchCar(fetchTicket); //the ticket has been used
-        //String tipMessage1 = parkingBoy.giveTipMessageByFetchCar(fetchTicket);
 
         //then
 
@@ -257,7 +238,6 @@ public class ParkingBoyTest {
         //when
         String tipMessage11 = parkingBoy.giveTipMessageByFetchCar(fetchTicket11); //when capacity of parkingLot is full
 
-//System.out.println(parkingBoy.getParkingLot().get(0).size());
         //then
 
         assertThat(tipMessage11, is("Not enough position."));
@@ -300,8 +280,6 @@ public class ParkingBoyTest {
         Ticket fetchTicket11 = parkingBoy.park(car11);  //parking the car to next parkingLot
 
         //when
-        //String tipMessage = parkingBoy.giveTipMessageByFetchCar(null); //when giving the wrong ticket
-
         Car fetchedCar11 = parkingBoy.fetchCar(fetchTicket11);
         //then
 
