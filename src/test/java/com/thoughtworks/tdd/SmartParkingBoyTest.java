@@ -26,7 +26,6 @@ public class SmartParkingBoyTest {
         Ticket fetchTicket = smartParkingBoy.park(car);
         //when
         Car fetchedCar = smartParkingBoy.fetchCar(fetchTicket);
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -43,14 +42,12 @@ public class SmartParkingBoyTest {
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
         SmartParkingBoy smartParkingBoy = new SmartParkingBoy(list);
-        //Ticket ticket = new Ticket();
         Ticket fetchTicket1 = smartParkingBoy.park(car1);
         Ticket fetchTicket2 = smartParkingBoy.park(car2);
 
         //when
         Car fetchedCar1 = smartParkingBoy.fetchCar(fetchTicket1);
         Car fetchedCar2 = smartParkingBoy.fetchCar(fetchTicket2);
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -70,7 +67,6 @@ public class SmartParkingBoyTest {
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
         SmartParkingBoy smartParkingBoy = new SmartParkingBoy(list);
-        //Ticket ticket = new Ticket();
         Ticket fetchTicket1 = smartParkingBoy.park(car1); //return the right ticket
         Ticket ticket = new Ticket();   //give a wrong ticket
 
@@ -78,7 +74,6 @@ public class SmartParkingBoyTest {
         //when
         Car fetchedCar1 = smartParkingBoy.fetchCar(ticket);
         Car fetchedCar2 = smartParkingBoy.fetchCar(null);
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -91,14 +86,12 @@ public class SmartParkingBoyTest {
     public void should_return_no_cars_when_fetch_car_given_ticket_that_has_been_used_by_parking_the_car(){
         //Given
         Car car1 = new Car();
-        // Car car2 = new Car();
         Map<Ticket,Car> map = new HashMap<>();
         ParkingLot parkingLot = new ParkingLot();
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
         SmartParkingBoy smartParkingBoy = new SmartParkingBoy(list);
-        //Ticket ticket = new Ticket();
         Ticket fetchTicket1 = smartParkingBoy.park(car1); //return the right ticket
 
 
@@ -106,7 +99,6 @@ public class SmartParkingBoyTest {
         //when
         Car fetchedCar1 = smartParkingBoy.fetchCar(fetchTicket1);
         Car fetchedCar2 = smartParkingBoy.fetchCar(fetchTicket1); //get the car again when the ticket has been used
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -131,14 +123,12 @@ public class SmartParkingBoyTest {
         Car car11 = new Car();
 
 
-        // Car car2 = new Car();
         Map<Ticket,Car> map = new HashMap<>();
         ParkingLot parkingLot = new ParkingLot();
         parkingLot.setMap(map);
         List<Map<Ticket,Car>> list = new ArrayList<>();
         list.add(parkingLot.getMap());
         SmartParkingBoy smartParkingBoy = new SmartParkingBoy(list);
-        //Ticket ticket = new Ticket();
         Ticket fetchTicket1 = smartParkingBoy.park(car1); //return the right ticket
         Ticket fetchTicket2 = smartParkingBoy.park(car2);
         Ticket fetchTicket3 = smartParkingBoy.park(car3);
@@ -151,17 +141,8 @@ public class SmartParkingBoyTest {
         Ticket fetchTicket10 = smartParkingBoy.park(car10);
         Ticket fetchTicket11 = smartParkingBoy.park(car11);
 
-
-
         //when
         Car fetchedCar11 = smartParkingBoy.fetchCar(fetchTicket11);
-
-
-
-
-
-
-        //System.out.println(fetchedCar);
 
         //then
 
@@ -192,7 +173,6 @@ public class SmartParkingBoyTest {
         //then
 
         assertThat(tipMessage, is("Unrecognized parking ticket."));
-        //assertThat(tipMessage1, is("Unrecognized parking ticket."));
     }
     @Test
     public void should_return_tipMessage__when_customer_can_not_fetch_car_by_given_no_ticket(){
@@ -256,7 +236,6 @@ public class SmartParkingBoyTest {
         //when
         String tipMessage11 = smartParkingBoy.giveTipMessageByFetchCar(fetchTicket11); //when capacity of parkingLot is full
 
-//System.out.println(parkingBoy.getParkingLot().get(0).size());
         //then
 
         assertThat(tipMessage11, is("Not enough position."));
@@ -301,8 +280,6 @@ public class SmartParkingBoyTest {
         System.out.println(fetchTicket11);
 
         //when
-        //String tipMessage = parkingBoy.giveTipMessageByFetchCar(null); //when giving the wrong ticket
-
         Car fetchedCar11 = smartParkingBoy.fetchCar(fetchTicket11);
         //then
 
